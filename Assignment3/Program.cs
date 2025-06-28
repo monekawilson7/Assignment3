@@ -78,6 +78,18 @@ namespace Assignment3
             int fact = Factorial(number);
             Console.WriteLine(fact);
             #endregion
+            
+            #region Q8
+            Console.WriteLine("Enter string");
+            string str = Console.ReadLine();
+            Console.WriteLine("Enter position");
+            int position = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter new Char");
+            char ch = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            string result = ChangeChar(str, position, ch);
+            Console.WriteLine(result);
+            #endregion
         }
 
         #region Q1 Functions
@@ -165,6 +177,20 @@ namespace Assignment3
                 result *= i;
             }
             return result;
+        }
+        #endregion
+
+        #region Q8
+        static string ChangeChar(string input, int postion, char newChar) {
+            if (string.IsNullOrEmpty(input))
+                return input;
+            if (postion < 0 || postion >= input.Length)
+                return input;
+
+            char[] chars = input.ToCharArray();
+            chars[postion] = newChar;
+
+            return new string(chars);
         }
         #endregion
     }
