@@ -5,6 +5,7 @@ namespace Assignment3
     {
         static void Main(string[] args)
         {
+            
             #region Q1
 
             /*Passing by Value means sending a copy of the variable to the method.Changes inside the method do not affect the original variable.
@@ -63,8 +64,15 @@ namespace Assignment3
             else
                 Console.WriteLine($"{num} is not prime number");
             #endregion
+            
+            #region Q6
+            int[] numbers = {50,10,100,30,7 };
+            MinMaxArray(numbers, out int minVal, out int maxVal);
+            Console.WriteLine($"min value= {minVal}");
+            Console.WriteLine($"max value= {maxVal}");
+            #endregion
         }
-
+        
         #region Q1 Functions
         static void ChangeValue(int num)
         {
@@ -125,6 +133,21 @@ namespace Assignment3
                     return false;
             }
             return true;
+        }
+        #endregion
+       
+        #region Q6
+        static void MinMaxArray(int[] arr, out int min, out int max)
+        {
+            min = arr[0];
+            max = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < min)
+                    min = arr[i];
+                if (arr[i] > max)
+                    max = arr[i];
+            }
         }
         #endregion
     }
