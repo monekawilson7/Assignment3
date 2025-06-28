@@ -71,8 +71,15 @@ namespace Assignment3
             Console.WriteLine($"min value= {minVal}");
             Console.WriteLine($"max value= {maxVal}");
             #endregion
+            
+            #region Q7
+            Console.WriteLine("Enter number");
+            int number = int.Parse(Console.ReadLine());
+            int fact = Factorial(number);
+            Console.WriteLine(fact);
+            #endregion
         }
-        
+
         #region Q1 Functions
         static void ChangeValue(int num)
         {
@@ -135,7 +142,6 @@ namespace Assignment3
             return true;
         }
         #endregion
-       
         #region Q6
         static void MinMaxArray(int[] arr, out int min, out int max)
         {
@@ -148,6 +154,17 @@ namespace Assignment3
                 if (arr[i] > max)
                     max = arr[i];
             }
+        }
+        #endregion
+
+        #region Q7
+        static int Factorial(int num) {
+            int result = 1;
+            for (int i = 2; i <= num; i++)
+            {
+                result *= i;
+            }
+            return result;
         }
         #endregion
     }
